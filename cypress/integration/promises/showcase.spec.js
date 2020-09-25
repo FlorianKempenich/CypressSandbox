@@ -14,26 +14,22 @@ context("Showcase problem with Promises", () => {
     cy.get("#debug").should("not.be.hidden");
   });
 
+  it("sandbox", () => {
+    cy.task("debugPromises", 2000)
+      .then((_) => cy.task("debugPromises", 5000))
+      .then((resultOfTheDebugPromisesTask) => {
+        console.log(resultOfTheDebugPromisesTask);
+        cy.get("#btn").should("not.exist");
+      });
+  });
 
-
-
-
-
-
-
-
-
-
-
-
-  
   // Also read this: https://docs.cypress.io/guides/references/migration-guide.html#Mocha-upgrade
   // Problem:
   // - warning shown
   // - failure doesn't register as a failure
-  it("[Promise Problem] shows debug div when clicking button", async () => {
+  it.skip("[Promise Problem] shows debug div when clicking button", async () => {
     cy.get("#debug").should("be.hidden");
-    cy.get("#btn").should('not.exist')
+    cy.get("#btn").should("not.exist");
     console.log("Promise start");
     await resolvesAfter3Sec().then((_) => {
       console.log("Promise done");

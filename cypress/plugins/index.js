@@ -16,6 +16,18 @@
  * @type {Cypress.PluginConfig}
  */
 module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
-}
+  on("task", {
+    async debugPromises(sleepDuration) {
+      const resolvesAfterSleepDuration = new Promise((resolve, _reject) => {
+        setTimeout(() => {
+          resolve();
+        }, sleepDuration);
+      });
+
+      console.log('before sleep: ' + sleepDuration + 'ms');
+      await resolvesAfterSleepDuration
+      console.log('after sleep');
+      return "hello this is the return of the task, we're done waiting now 😃";
+    },
+  });
+};

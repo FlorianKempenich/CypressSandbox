@@ -128,6 +128,16 @@ arch@^2.1.2:
   resolved "https://registry.yarnpkg.com/arch/-/arch-2.1.2.tgz#0c52bbe7344bb4fa260c443d2cbad9c00ff2f0bf"
   integrity sha512-NTBIIbAfkJeIletyABbVtdPgeKfDafR+1mZV/AyyfC1UkVkp9iUjV+wwmqtUgphHYajbI86jejBJp5e+jkGTiQ==
 
+array-parallel@~0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/array-parallel/-/array-parallel-0.1.3.tgz#8f785308926ed5aa478c47e64d1b334b6c0c947d"
+  integrity sha1-j3hTCJJu1apHjEfmTRszS2wMlH0=
+
+array-series@~0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/array-series/-/array-series-0.1.5.tgz#df5d37bfc5c2ef0755e2aa4f92feae7d4b5a972f"
+  integrity sha1-3103v8XC7wdV4qpPkv6ufUtaly8=
+
 asn1@~0.2.3:
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/asn1/-/asn1-0.2.4.tgz#8d2475dfab553bb33e77b54e59e880bb8ce23136"
@@ -355,6 +365,14 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
+
+cross-spawn@^4.0.0:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-4.0.2.tgz#7b9247621c23adfdd3856004a823cbe397424d41"
+  integrity sha1-e5JHYhwjrf3ThWAEqCPL45dCTUE=
+  dependencies:
+    lru-cache "^4.0.1"
+    which "^1.2.9"
 
 cross-spawn@^7.0.0:
   version "7.0.3"
@@ -635,6 +653,16 @@ global-dirs@^2.0.1:
   dependencies:
     ini "^1.3.5"
 
+gm@^1.23.1:
+  version "1.23.1"
+  resolved "https://registry.yarnpkg.com/gm/-/gm-1.23.1.tgz#2edeeb958084d0f8ea7988e5d995b1c7dfc14777"
+  integrity sha1-Lt7rlYCE0PjqeYjl2ZWxx9/BR3c=
+  dependencies:
+    array-parallel "~0.1.3"
+    array-series "~0.1.5"
+    cross-spawn "^4.0.0"
+    debug "^3.1.0"
+
 graceful-fs@^4.1.6, graceful-fs@^4.2.0:
   version "4.2.4"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
@@ -907,6 +935,14 @@ log-update@^2.3.0:
     cli-cursor "^2.0.0"
     wrap-ansi "^3.0.1"
 
+lru-cache@^4.0.1:
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.1.5.tgz#8bbe50ea85bed59bc9e33dcab8235ee9bcf443cd"
+  integrity sha512-sWZlbEP2OsHNkXrMl5GYk/jKk70MBng6UU4YI/qGDYbgf6YbP4EvmqISbXCoJiRKs+1bSpFHVgQxvJ17F2li5g==
+  dependencies:
+    pseudomap "^1.0.2"
+    yallist "^2.1.2"
+
 merge-stream@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/merge-stream/-/merge-stream-2.0.0.tgz#52823629a14dd00c9770fb6ad47dc6310f2c1f60"
@@ -1036,6 +1072,14 @@ path-key@^3.0.0, path-key@^3.1.0:
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-3.1.1.tgz#581f6ade658cbba65a0d3380de7753295054f375"
   integrity sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==
 
+pdf2pic@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/pdf2pic/-/pdf2pic-2.1.2.tgz#8ffb1196bde80c1010f8e465cad9f8513f3625ed"
+  integrity sha512-675snLMBjgCPLipWYDNT13zqxrKhVk1+aDkroJuU6G6DZ5qaEAWRFo9RWAmunHDbEwhx258IBJWUIVJXh3Puyg==
+  dependencies:
+    fs-extra "^9.0.1"
+    gm "^1.23.1"
+
 pend@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/pend/-/pend-1.2.0.tgz#7a57eb550a6783f9115331fcf4663d5c8e007a50"
@@ -1060,6 +1104,11 @@ process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
+
+pseudomap@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
+  integrity sha1-8FKijacOYYkX7wqKw0wa5aaChrM=
 
 psl@^1.1.28:
   version "1.8.0"
@@ -1370,6 +1419,13 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
+which@^1.2.9:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/which/-/which-1.3.1.tgz#a45043d54f5805316da8d62f9f50918d3da70b0a"
+  integrity sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ==
+  dependencies:
+    isexe "^2.0.0"
+
 which@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/which/-/which-2.0.2.tgz#7c6a8dd0a636a0327e10b59c9286eee93f3f51b1"
@@ -1389,6 +1445,11 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
+
+yallist@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/yallist/-/yallist-2.1.2.tgz#1c11f9218f076089a47dd512f93c6699a6a81d52"
+  integrity sha1-HBH5IY8HYImkfdUS+TxmmaaoHVI=
 
 yauzl@^2.10.0:
   version "2.10.0"

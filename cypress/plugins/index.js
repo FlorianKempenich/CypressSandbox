@@ -15,6 +15,8 @@
 /**
  * @type {Cypress.PluginConfig}
  */
+const convertPdfToPng = require("../support/pdfToPng");
+
 module.exports = (on, config) => {
   on("task", {
     async debugPromises(sleepDuration) {
@@ -24,10 +26,28 @@ module.exports = (on, config) => {
         }, sleepDuration);
       });
 
-      console.log('before sleep: ' + sleepDuration + 'ms');
-      await resolvesAfterSleepDuration
-      console.log('after sleep');
+      console.log("before sleep: " + sleepDuration + "ms");
+      await resolvesAfterSleepDuration;
+      console.log("after sleep");
       return "hello this is the return of the task, we're done waiting now 😃";
     },
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    async convertPdfToPng() {
+      await convertPdfToPng()
+
+      return "Pdf converted!"
+    }
   });
 };

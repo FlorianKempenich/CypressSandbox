@@ -16,10 +16,14 @@ context("Showcase problem with Promises", () => {
 
   it("sandbox", () => {
     cy.task("debugPromises", 2000)
-      .then((_) => cy.task("debugPromises", 5000))
+      .then((_) => cy.task("debugPromises", 1000))
+      .then((_) => cy.task("convertPdfToPng"))
       .then((resultOfTheDebugPromisesTask) => {
         console.log(resultOfTheDebugPromisesTask);
-        cy.get("#btn").should("not.exist");
+
+        cy.get("#debug").should("be.hidden");
+        cy.get("#btn").click();
+        cy.get("#debug").should("not.be.hidden");
       });
   });
 
@@ -27,10 +31,12 @@ context("Showcase problem with Promises", () => {
   // Problem:
   // - warning shown
   // - failure doesn't register as a failure
-  it.skip("[Promise Problem] shows debug div when clicking button", async () => {
+  it("[Promise Problem] shows debug div when clicking button", async () => {
     cy.get("#debug").should("be.hidden");
+
     cy.get("#btn").should("not.exist");
     console.log("Promise start");
+
     await resolvesAfter3Sec().then((_) => {
       console.log("Promise done");
     });

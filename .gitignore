@@ -2,6 +2,7 @@
 # Created by https://www.toptal.com/developers/gitignore/api/node
 # Edit at https://www.toptal.com/developers/gitignore?templates=node
 
+compassReportToPng/*.png
 ### Node ###
 # Logs
 logs
@@ -112,4 +113,3 @@ dist
 .vscode-test
 
 # End of https://www.toptal.com/developers/gitignore/api/node
-

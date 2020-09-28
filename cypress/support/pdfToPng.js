@@ -22,7 +22,6 @@ async function convertPdfToPng() {
     console.log(`Page ${pageNumber} has been converted to png`);
   }
 
-  await convertPage(10);
   await convertPage(3);
 }
 

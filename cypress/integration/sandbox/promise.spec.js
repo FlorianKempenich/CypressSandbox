@@ -15,8 +15,8 @@ context("Showcase problem with Promises", () => {
   });
 
   it("sandbox", () => {
-    cy.task("debugPromises", 2000)
-      .then((_) => cy.task("debugPromises", 1000))
+    cy.get("#debug").should("be.hidden");
+    cy.task("debugPromises", 1000)
       .then((_) => cy.task("convertPdfToPng"))
       .then((resultOfTheDebugPromisesTask) => {
         console.log(resultOfTheDebugPromisesTask);

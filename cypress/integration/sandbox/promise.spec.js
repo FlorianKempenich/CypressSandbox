@@ -17,7 +17,6 @@ context("Showcase problem with Promises", () => {
   it("sandbox", () => {
     cy.get("#debug").should("be.hidden");
     cy.task("debugPromises", 1000)
-      .then((_) => cy.task("convertPdfToPng"))
       .then((resultOfTheDebugPromisesTask) => {
         console.log(resultOfTheDebugPromisesTask);
 
@@ -31,7 +30,7 @@ context("Showcase problem with Promises", () => {
   // Problem:
   // - warning shown
   // - failure doesn't register as a failure
-  it("[Promise Problem] shows debug div when clicking button", async () => {
+  it.skip("[Promise Problem] shows debug div when clicking button", async () => {
     cy.get("#debug").should("be.hidden");
 
     cy.get("#btn").should("not.exist");

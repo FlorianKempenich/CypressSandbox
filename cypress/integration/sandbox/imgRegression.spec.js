@@ -14,4 +14,19 @@ context("Sandbox Image Regression", () => {
     cy.get("#debug").should("not.be.hidden");
   });
 
+  it("compares 2 images", () => {
+    cy.task("compareImages", {
+      img1Id: "compass",
+      img2Id: "compassExpected",
+    }).then((result) => {
+      console.log(result);
+    });
+
+    cy.task("compareImages", {
+      img1Id: "compass",
+      img2Id: "compassWrong",
+    }).then((result) => {
+      console.log(result);
+    });
+  });
 });

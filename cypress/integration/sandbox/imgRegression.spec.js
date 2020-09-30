@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-context("Showcase problem with Promises", () => {
+context("Sandbox Image Regression", () => {
   beforeEach(() => {
     cy.visit("http://localhost:1234/fakeWebApp/");
   });

@@ -11,7 +11,7 @@ function diffBetween(img1Id, img2Id) {
     // cropImageA: { x:200, y:300, width:2000, height:1000 },
     thresholdType: BlinkDiff.THRESHOLD_PERCENT,
     threshold: percent(1),
-    imageOutputPath: outputFile,
+    imageOutputPath: outputFile(img1Id, img2Id),
     debug: true,
   });
 

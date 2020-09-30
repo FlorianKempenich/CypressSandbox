@@ -17,6 +17,7 @@ function diffBetween(img1Id, img2Id, ignoredBox) {
 
   resemble(path(img1Id))
     .compareTo(path(img2Id))
+    .ignoreAntialiasing()
     .onComplete((result) => {
       console.log("--------------------------------------------");
       console.log("Results for: " + outputFile(img1Id, img2Id, ignoredBox));
@@ -30,15 +31,18 @@ function diffBetween(img1Id, img2Id, ignoredBox) {
     });
 }
 
-diffBetween("square", "squareCopy");
-diffBetween("square", "squareModified");
-const ignoredBox = {
-  left: 450,
-  top: 550,
-  right: 650,
-  bottom: 700,
-};
-diffBetween("square", "squareModified", ignoredBox);
+// diffBetween("square", "squareCopy");
+// diffBetween("square", "squareModified");
+// const ignoredBox = {
+//   left: 450,
+//   top: 550,
+//   right: 650,
+//   bottom: 700,
+// };
+// diffBetween("square", "squareModified", ignoredBox);
+
+diffBetween('compass', 'compassWrong')
+diffBetween('compass', 'compassExpected')
 
 // x: 330
 // y: 370
